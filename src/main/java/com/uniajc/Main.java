@@ -6,7 +6,7 @@ import com.uniajc.vista.VistaEstudiante;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Practica MVC - UNIAJC");
+        System.out.println("Practica MVC - UNIAJC\n");
 
         // System.out.println("Creando el modelo...");
         Estudiante estudiante = new Estudiante("Juan Perez", 20);
@@ -27,13 +27,25 @@ public class Main {
         // System.out.println("Actualizando la vista después de modificar el modelo...");
         controlador.actualizarVista();
 
-        System.out.println("-----------------------");
         System.out.println("Agregando más estudiantes y mostrando la lista completa...");
 
-
+        controlador.agregarEstudiante(estudiante);
         controlador.agregarEstudiante(new Estudiante("Carlos Gómez", 19));
         controlador.agregarEstudiante(new Estudiante("Ana Martínez", 21)); 
         controlador.agregarEstudiante(new Estudiante("Luis Fernández", 20));
+        controlador.mostrarTodosLosEstudiantes();
+
+        System.out.println("Buscando un estudiante por nombre...");
+        controlador.buscarEstudiante("Ana Martínez");
+
+        System.out.println("-----------------------");
+        System.out.println("Actualizando un estudiante...");
+        controlador.actualizarEstudiante(new Estudiante("Luis Fernández", 25));
+
+        System.out.println("-----------------------");
+        System.out.println("Eliminando un estudiante...");
+        controlador.eliminarEstudiante(new Estudiante("Carlos Gómez", 19));
+
         controlador.mostrarTodosLosEstudiantes();
     }
 }
