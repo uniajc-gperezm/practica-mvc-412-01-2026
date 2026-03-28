@@ -1,13 +1,17 @@
 package com.uniajc;
 
 import com.uniajc.controlador.ControladorEstudiante;
+import com.uniajc.controlador.ControladorDocente;
 import com.uniajc.modelo.Estudiante;
+import com.uniajc.modelo.Docente;
 import com.uniajc.vista.VistaEstudiante;
+import com.uniajc.vista.VistaDocente;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Practica MVC - UNIAJC\n");
 
+        // ====== ESTUDIANTES ======
         // System.out.println("Creando el modelo...");
         Estudiante estudiante = new Estudiante("Juan Perez", 20);
         
@@ -47,5 +51,37 @@ public class Main {
         controlador.eliminarEstudiante(new Estudiante("Carlos Gómez", 19));
 
         controlador.mostrarTodosLosEstudiantes();
+
+        // ===== DOCENTES ======
+        System.out.println("\nDocentes MVC\n");
+        Docente docente = new Docente("Ana Suárez", 35);
+        VistaDocente vistaDocente = new VistaDocente();
+        ControladorDocente controladorDocente = new ControladorDocente(docente, vistaDocente);
+
+        controladorDocente.actualizarVista();
+
+        docente.setNombre("Ana María Suárez");
+        docente.setEdad(36);
+        controladorDocente.actualizarVista();
+
+        System.out.println("Agregando más docentes y mostrando la lista completa...");
+        controladorDocente.agregarDocente(docente);
+        controladorDocente.agregarDocente(new Docente("Pedro Ramírez", 42));
+        controladorDocente.agregarDocente(new Docente("Laura Castro", 29));
+        controladorDocente.agregarDocente(new Docente("Marta Rojas", 38));
+        controladorDocente.mostrarTodosLosDocentes();
+
+        System.out.println("Buscando un docente por nombre...");
+        controladorDocente.buscarDocente("Laura Castro");
+
+        System.out.println("-----------------------");
+        System.out.println("Actualizando un docente...");
+        controladorDocente.actualizarDocente(new Docente("Marta Rojas", 39));
+
+        System.out.println("-----------------------");
+        System.out.println("Eliminando un docente...");
+        controladorDocente.eliminarDocente(new Docente("Pedro Ramírez", 42));
+
+        controladorDocente.mostrarTodosLosDocentes();
     }
 }
