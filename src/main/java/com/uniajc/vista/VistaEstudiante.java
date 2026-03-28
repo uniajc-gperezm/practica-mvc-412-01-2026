@@ -9,11 +9,11 @@ public class VistaEstudiante {
         System.out.println("Detalles del Estudiante:");
         System.out.println("Nombre: " +estudiante.getNombre());
         System.out.println("Edad: " +estudiante.getEdad());
-
+        System.out.println("");
     }
 
     public void mostrarTodosLosEstudiantes(List<Estudiante> estudiantes) {
-        System.out.println("Lista de Estudiantes:");
+        System.out.println("\nLista de Estudiantes:");
         for(Estudiante estudiante : estudiantes) {
             mostrarDetallesEstudiante(estudiante);
             System.out.println("-------------------");

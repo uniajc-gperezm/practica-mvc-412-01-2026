@@ -38,9 +38,13 @@ public class ControladorEstudiante {
         System.out.println("Estudiante agregado: " +estudiante.getNombre());
     }
 
+    // Método para eliminar un estudiante de la lista por nombre, y que aparezca el mensaje de que se eliminó y al actualkizar la vista ya no aparezca el estudiante eliminado
     public void eliminarEstudiante(Estudiante estudiante) {
-        estudiantes.remove(estudiante);
-        System.out.println("Estudiante eliminado: " +estudiante.getNombre());
+        if(estudiantes.removeIf(est -> est.getNombre().equalsIgnoreCase(estudiante.getNombre()))) {
+            System.out.println("Estudiante eliminado: " +estudiante.getNombre());
+        } else {
+            System.out.println("Estudiante no encontrado para eliminar: " +estudiante.getNombre());
+        }
     }
 
     public void actualizarEstudiante(Estudiante estudiante) {
