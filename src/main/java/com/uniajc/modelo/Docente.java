@@ -55,7 +55,7 @@ public class Docente {
     public void setId(int id) {
         Id = id;
     }
-    
+
 
     public void aumentarSalario(double porcentaje) {
         salario += salario * porcentaje / 100;
