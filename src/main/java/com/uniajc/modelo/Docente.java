@@ -5,13 +5,15 @@ public class Docente {
     private int edad;
     private String materia; // Nueva propiedad para la materia que enseña el docente
     private double salario; // Nueva propiedad para el salario del docente
+    private int Id; // Nueva propiedad para el ID del docente
     
 
-    public Docente(String nombre, int edad, String materia, double salario) {
+    public Docente(String nombre, int edad, String materia, double salario, int Id) {
         this.nombre = nombre;
         this.edad = edad;
         this.materia = materia;
         this.salario = salario;
+        this.Id = Id;
     }
 
     public String getNombre() {
@@ -45,6 +47,15 @@ public class Docente {
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
+    
 
     public void aumentarSalario(double porcentaje) {
         salario += salario * porcentaje / 100;
