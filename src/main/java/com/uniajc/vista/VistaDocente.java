@@ -7,7 +7,7 @@ import com.uniajc.modelo.Docente;
 public class VistaDocente {
 
     public void mostrarDetallesDocente(Docente docente) {
-        System.out.println("Detalles del Docente:");
+        System.out.println("Los Detalles del Docente:");
         System.out.println("Nombre: " + docente.getNombre());
         System.out.println("Materia: " + docente.getMateria());
     }
