@@ -53,7 +53,7 @@ public class Main {
 
         controladorDocente.actualizarVista();
 
-        controladorDocente.agregarDocente(new Docente("Paula Jimenez", "Biologia"));
+        controladorDocente.agregarDocente(new Docente("sofia Jimenez", "Biologia"));
         controladorDocente.agregarDocente(new Docente("Sergio Mora", "Historia"));
         controladorDocente.agregarDocente(new Docente("Camila Ortega", "Quimica"));
         controladorDocente.mostrarTodosLosDocentes();
