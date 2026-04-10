@@ -1,0 +1,13 @@
+{
+    "servers": {
+        "java-jar-practica-mvc-412-01-2026": {
+            "command": "node",
+            "args": [
+                "c:\\Users\\57313\\.vscode\\extensions\\javajarmcp.javajarmcp-0.0.2\\mcp-server\\dist\\index.js"
+            ],
+            "env": {
+                "MAVEN_REPO_PATH": "C:\\Users\\57313\\.m2\\repository"
+            }
+        }
+    }
+}
