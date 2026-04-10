@@ -9,13 +9,13 @@ import com.uniajc.vista.VistaEstudiante;
 public class ControladorEstudiante {
 
     private Estudiante estudiante;
-    private List<Estudiante> estudiantes; // Para manejar múltiples estudiantes
+    private List<Estudiante> estudiantes; 
     private VistaEstudiante vista;
 
     public ControladorEstudiante(Estudiante estudiante, VistaEstudiante vista) {
         this.estudiante = estudiante;
         this.vista = vista;
-        this.estudiantes = new ArrayList<Estudiante>(); // Inicializar la lista de estudiantes
+        this.estudiantes = new ArrayList<Estudiante>();
     }
 
     public Estudiante getEstudiante() {
@@ -34,17 +34,48 @@ public class ControladorEstudiante {
         this.vista = vista;
     }
 
+    // CREAR
     public void agregarEstudiante(Estudiante estudiante) {
         estudiantes.add(estudiante);
         System.out.println("Estudiante agregado: " + estudiante.getNombre());
     }
 
+    // MOSTRAR UNO
     public void actualizarVista() {
         vista.mostrarDetallesEstudiante(estudiante);
     }
 
+    // MOSTRAR TODOS
     public void mostrarTodosLosEstudiantes() {
         vista.mostrarTodosLosEstudiantes(estudiantes);
     }
 
+    // LEER
+    public Estudiante buscarEstudiantePorId(int index) {
+        if (index >= 0 && index < estudiantes.size()) {
+            return estudiantes.get(index);
+        }
+        System.out.println("Estudiante no encontrado");
+        return null;
+    }
+
+    // ACTUALIZAR
+    public void actualizarEstudiante(int index, Estudiante nuevo) {
+        if (index >= 0 && index < estudiantes.size()) {
+            estudiantes.set(index, nuevo);
+            System.out.println("Estudiante actualizado: " + nuevo.getNombre());
+        } else {
+            System.out.println("Índice inválido");
+        }
+    }
+
+    // ELIMINAR
+    public void eliminarEstudiante(int index) {
+        if (index >= 0 && index < estudiantes.size()) {
+            Estudiante eliminado = estudiantes.remove(index);
+            System.out.println("Estudiante eliminado: " + eliminado.getNombre());
+        } else {
+            System.out.println("Índice inválido");
+        }
+    }
 }
