@@ -1,5 +1,6 @@
 package com.uniajc;
 
+import com.uniajc.config.ConexionPostgresDatabase;
 import com.uniajc.controlador.ControladorEstudiante;
 import com.uniajc.modelo.Estudiante;
 import com.uniajc.vista.VistaEstudiante;
@@ -37,5 +38,8 @@ public class Main {
         controlador.mostrarTodosLosEstudiantes();
 
         controlador.eliminarEstudiante("Luis Fernández"); // Eliminar el estudiante original
+
+        ConexionPostgresDatabase.getConnection();
+        
     }
 }
