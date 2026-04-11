@@ -39,6 +39,11 @@ public class ControladorEstudiante {
         System.out.println("Estudiante agregado: " + estudiante.getNombre());
     }
 
+    public void eliminarEstudiante(String nombre) {
+        estudiantes.removeIf(e -> e.getNombre().equals(nombre));
+        System.out.println("Estudiante eliminado: " + nombre);
+    }
+
     public void actualizarVista() {
         vista.mostrarDetallesEstudiante(estudiante);
     }

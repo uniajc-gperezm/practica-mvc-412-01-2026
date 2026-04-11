@@ -35,5 +35,7 @@ public class Main {
         controlador.agregarEstudiante(new Estudiante("Ana Martínez", 21)); 
         controlador.agregarEstudiante(new Estudiante("Luis Fernández", 20));
         controlador.mostrarTodosLosEstudiantes();
+
+        controlador.eliminarEstudiante("Luis Fernández"); // Eliminar el estudiante original
     }
 }
