@@ -8,7 +8,8 @@ public class VistaEstudiante {
     public void mostrarDetallesEstudiante(Estudiante estudiante) {
         System.out.println("Detalles del Estudiante:");
         System.out.println("Nombre: " +estudiante.getNombre());
-        System.out.println("Edad: " +estudiante.getEdad());
+        System.out.println("Apellido: " +estudiante.getApellido());
+        System.out.println("Correo: " +estudiante.getCorreo());
         System.out.println("");
     }
 
