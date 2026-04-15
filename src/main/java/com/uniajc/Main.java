@@ -39,5 +39,9 @@ public class Main {
         // Probamos la ejecución del flujo de actualización de un estudiante por ID
         controladorEstudiante.actualizarEstudiante();
         controladorEstudiante.mostrarTodosLosEstudiantes();
+
+        // Probamos la ejecución del flujo de eliminación de un estudiante por ID
+        controladorEstudiante.eliminarEstudiante();
+        controladorEstudiante.mostrarTodosLosEstudiantes();
     }
 }
