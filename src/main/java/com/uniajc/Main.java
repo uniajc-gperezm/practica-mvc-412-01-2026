@@ -28,14 +28,16 @@ public class Main {
         ControladorEstudiante controladorEstudiante = new ControladorEstudiante(vistaEstudiante, estudianteService);
 
         // Probamos la ejecución del flujo de registro de un estudiante
-        // controladorEstudiante.mostrarTodosLosEstudiantes();
-
-        // controladorEstudiante.registrarEstudiante();
-
-        // controladorEstudiante.mostrarTodosLosEstudiantes();
+        controladorEstudiante.mostrarTodosLosEstudiantes();
+        controladorEstudiante.registrarEstudiante();
+        controladorEstudiante.mostrarTodosLosEstudiantes();
 
         // Probamos la ejecución del flujo de consulta de un estudiante por ID
         int idEstudiante = vistaEstudiante.solicitarIdEstudiante();
         controladorEstudiante.mostrarDetallesEstudiante(idEstudiante);
+
+        // Probamos la ejecución del flujo de actualización de un estudiante por ID
+        controladorEstudiante.actualizarEstudiante();
+        controladorEstudiante.mostrarTodosLosEstudiantes();
     }
 }
