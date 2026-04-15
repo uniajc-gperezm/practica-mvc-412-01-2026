@@ -45,6 +45,11 @@ public class VistaEstudiante {
         }
     }
 
+    public int solicitarIdEstudiante() {
+        System.out.print("Ingrese el ID del estudiante: ");
+        return scanner.nextInt();
+    }
+
     public void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
     }

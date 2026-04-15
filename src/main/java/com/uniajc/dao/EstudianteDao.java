@@ -63,12 +63,36 @@ public class EstudianteDao {
 
     // obtenerEstudiantePorId(int id)
     // SELECT id, name, lastname, email FROM "practica-mvc".estudiantes WHERE id = 2;
+    public Estudiante obtenerEstudiantePorId(int id) {
+        Estudiante estudiante = null;
+        
+        String sql = "SELECT id, name, lastname, email FROM \"practica-mvc\".estudiantes WHERE id = ?;";
+
+        try(Connection conn = ConexionPostgresDatabase.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+
+            while(rs.next()) {
+                estudiante = new Estudiante();
+
+                estudiante.setId(rs.getInt("id"));
+                estudiante.setNombre(rs.getString("name"));
+                estudiante.setApellido(rs.getString("lastname"));
+                estudiante.setCorreo(rs.getString("email"));
+            }
+
+        } catch(SQLException error) {
+            error.printStackTrace();
+        }
+
+        return estudiante;
+    }
 
     // actualizarEstudiante(Estudiante estudiante)
     // UPDATE "practica-mvc".estudiantes
     // SET email = 'emailactualizado@example.com', lastname = 'nuevoapellido'
     // WHERE id = 2;
-
+    
     // eliminarEstudiante(int id)
     // DELETE FROM "practica-mvc".estudiantes WHERE id = 1;
 }

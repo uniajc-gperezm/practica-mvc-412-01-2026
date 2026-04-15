@@ -29,4 +29,8 @@ public class EstudianteService {
     public List<Estudiante> mostrarTodosLosEstudiantes() {
         return estudianteDao.obtenerTodosLosEstudiantes();
     }
+
+    public Estudiante obtenerEstudiantePorId(int id) {
+        return estudianteDao.obtenerEstudiantePorId(id);
+    }
 }

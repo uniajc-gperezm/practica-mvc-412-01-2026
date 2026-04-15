@@ -30,4 +30,15 @@ public class ControladorEstudiante {
         // Lógica para mostrar todos los estudiantes
         vistaEstudiante.mostrarTodosLosEstudiantes(estudianteService.mostrarTodosLosEstudiantes());
     }
+
+    public void mostrarDetallesEstudiante(int id) {
+        // Lógica para mostrar los detalles de un estudiante específico
+        Estudiante estudiante = estudianteService.obtenerEstudiantePorId(id);
+
+        if(estudiante != null) {
+            vistaEstudiante.mostrarDetallesEstudiante(estudiante);
+        } else {
+            vistaEstudiante.mostrarMensaje("No se encontró un estudiante con el ID proporcionado.");
+        }
+    }
 }
