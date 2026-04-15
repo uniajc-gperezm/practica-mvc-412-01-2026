@@ -27,11 +27,15 @@ public class Main {
         // 4. Crear la instancia del controlador
         ControladorEstudiante controladorEstudiante = new ControladorEstudiante(vistaEstudiante, estudianteService);
 
-        // Probamos la ejeccucion del flujo de registro de un estudiante
-        controladorEstudiante.mostrarTodosLosEstudiantes();
+        // Probamos la ejecución del flujo de registro de un estudiante
+        // controladorEstudiante.mostrarTodosLosEstudiantes();
 
-        controladorEstudiante.registrarEstudiante();
+        // controladorEstudiante.registrarEstudiante();
 
-        controladorEstudiante.mostrarTodosLosEstudiantes();
+        // controladorEstudiante.mostrarTodosLosEstudiantes();
+
+        // Probamos la ejecución del flujo de consulta de un estudiante por ID
+        int idEstudiante = vistaEstudiante.solicitarIdEstudiante();
+        controladorEstudiante.mostrarDetallesEstudiante(idEstudiante);
     }
 }
