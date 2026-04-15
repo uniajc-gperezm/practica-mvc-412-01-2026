@@ -92,6 +92,21 @@ public class EstudianteDao {
     // UPDATE "practica-mvc".estudiantes
     // SET email = 'emailactualizado@example.com', lastname = 'nuevoapellido'
     // WHERE id = 2;
+    public void actualizarEstudiante(Estudiante estudiante) {
+        String sql = "UPDATE \"practica-mvc\".estudiantes SET name = ?, lastname = ?, email = ? WHERE id = ?;";
+
+        try(Connection conn = ConexionPostgresDatabase.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, estudiante.getNombre());
+            pstmt.setString(2, estudiante.getApellido());
+            pstmt.setString(3, estudiante.getCorreo());
+            pstmt.setInt(4, estudiante.getId());
+            
+            pstmt.executeUpdate();
+
+        } catch(SQLException error) {
+            error.printStackTrace();
+        }   
+    }
     
     // eliminarEstudiante(int id)
     // DELETE FROM "practica-mvc".estudiantes WHERE id = 1;
