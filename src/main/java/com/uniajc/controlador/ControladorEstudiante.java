@@ -2,77 +2,32 @@ package com.uniajc.controlador;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.uniajc.modelo.Estudiante;
+import com.uniajc.servicios.EstudianteService;
 import com.uniajc.vista.VistaEstudiante;
 
 public class ControladorEstudiante {
 
-    private Estudiante estudiante;
-    private List<Estudiante> estudiantes; // Para manejar múltiples estudiantes
-    private VistaEstudiante vista;
+    private VistaEstudiante vistaEstudiante;
+    private EstudianteService estudianteService;
 
-    public ControladorEstudiante(Estudiante estudiante, VistaEstudiante vista) {
-        this.estudiante = estudiante;
-        this.vista = vista;
-        this.estudiantes = new ArrayList<Estudiante>(); // Inicializar la lista de estudiantes
+    public ControladorEstudiante(VistaEstudiante vistaEstudiante, EstudianteService estudianteService) {
+        this.vistaEstudiante = vistaEstudiante;
+        this.estudianteService = estudianteService;
     }
 
-    public Estudiante getEstudiante() {
-        return estudiante;
-    }
+    public void registrarEstudiante() {
+        // Lógica para registrar un estudiante
 
-    public void setEstudiante(Estudiante estudiante) {
-        this.estudiante = estudiante;
-    }
+        Estudiante nuevoEstudiante = vistaEstudiante.solicitarDatosEstudiante();
 
-    public VistaEstudiante getVista() {
-        return vista;
-    }
-
-    public void setVista(VistaEstudiante vista) {
-        this.vista = vista;
-    }
-
-    public void agregarEstudiante(Estudiante estudiante) {
-        estudiantes.add(estudiante);
-        System.out.println("Estudiante agregado: " +estudiante.getNombre());
-    }
-
-    // Método para eliminar un estudiante de la lista por nombre, y que aparezca el mensaje de que se eliminó y al actualkizar la vista ya no aparezca el estudiante eliminado
-    public void eliminarEstudiante(Estudiante estudiante) {
-        if(estudiantes.removeIf(est -> est.getNombre().equalsIgnoreCase(estudiante.getNombre()))) {
-            System.out.println("Estudiante eliminado: " +estudiante.getNombre());
-        } else {
-            System.out.println("Estudiante no encontrado para eliminar: " +estudiante.getNombre());
-        }
-    }
-
-    public void actualizarEstudiante(Estudiante estudiante) {
-        for(int i = 0; i < estudiantes.size(); i++) {
-            if(estudiantes.get(i).getNombre().equalsIgnoreCase(estudiante.getNombre())) {
-                estudiantes.set(i, estudiante);
-                System.out.println("Estudiante modificado: " +estudiante.getNombre());
-                return;
-            }
-        }
-        System.out.println("Estudiante no encontrado para modificar: " +estudiante.getNombre());
-    }
-
-    public void buscarEstudiante(String nombre) {
-        for(Estudiante est : estudiantes) {
-            if(est.getNombre().equalsIgnoreCase(nombre)) {
-                System.out.println("Estudiante encontrado: " +est.getNombre());
-                return;
-            }
-        }
-        System.out.println("Estudiante no encontrado: " +nombre);
-    }
-
-    public void actualizarVista() {
-        vista.mostrarDetallesEstudiante(estudiante);
+        estudianteService.registrarEstudiante(nuevoEstudiante);
+        vistaEstudiante.mostrarMensaje("Estudiante registrado exitosamente.");
     }
 
     public void mostrarTodosLosEstudiantes() {
-        vista.mostrarTodosLosEstudiantes(estudiantes);
+        // Lógica para mostrar todos los estudiantes
+        vistaEstudiante.mostrarTodosLosEstudiantes(estudianteService.mostrarTodosLosEstudiantes());
     }
 }
