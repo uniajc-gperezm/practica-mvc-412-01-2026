@@ -33,4 +33,8 @@ public class EstudianteService {
     public Estudiante obtenerEstudiantePorId(int id) {
         return estudianteDao.obtenerEstudiantePorId(id);
     }
+
+    public void actualizarEstudiante(Estudiante estudiante) {
+        estudianteDao.actualizarEstudiante(estudiante);
+    }
 }

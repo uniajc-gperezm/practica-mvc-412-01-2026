@@ -50,6 +50,23 @@ public class VistaEstudiante {
         return scanner.nextInt();
     }
 
+    public Estudiante solicitarDatosEstudianteActualizados(Estudiante estudianteExistente) {
+        System.out.println("Actualizando los datos del estudiante...");
+
+        scanner.nextLine();
+
+        System.out.print("Ingrese el nuevo nombre del estudiante: ");
+        String nuevoNombre = scanner.nextLine();
+
+        System.out.print("Ingrese el nuevo apellido del estudiante: ");
+        String nuevoApellido = scanner.nextLine();
+
+        System.out.print("Ingrese el nuevo correo del estudiante: ");
+        String nuevoCorreo = scanner.nextLine();
+
+        return new Estudiante(estudianteExistente.getId(), nuevoNombre, nuevoApellido, nuevoCorreo);
+    }
+
     public void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
     }

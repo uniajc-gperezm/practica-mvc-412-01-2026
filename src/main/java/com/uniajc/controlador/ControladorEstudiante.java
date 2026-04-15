@@ -41,4 +41,18 @@ public class ControladorEstudiante {
             vistaEstudiante.mostrarMensaje("No se encontró un estudiante con el ID proporcionado.");
         }
     }
+
+    public void actualizarEstudiante() {
+        // Lógica para actualizar un estudiante
+        int id = vistaEstudiante.solicitarIdEstudiante();
+        Estudiante estudianteExistente = estudianteService.obtenerEstudiantePorId(id);
+
+        if(estudianteExistente != null) {
+            Estudiante estudianteActualizado = vistaEstudiante.solicitarDatosEstudianteActualizados(estudianteExistente);
+            estudianteService.actualizarEstudiante(estudianteActualizado);
+            vistaEstudiante.mostrarMensaje("Estudiante actualizado exitosamente.");
+        } else {
+            vistaEstudiante.mostrarMensaje("No se encontró un estudiante con el ID proporcionado.");
+        }
+    }
 }
