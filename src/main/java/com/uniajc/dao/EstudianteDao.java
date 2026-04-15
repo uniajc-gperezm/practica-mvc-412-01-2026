@@ -110,4 +110,15 @@ public class EstudianteDao {
     
     // eliminarEstudiante(int id)
     // DELETE FROM "practica-mvc".estudiantes WHERE id = 1;
+    public void eliminarEstudiante(int id) {
+        String sql = "DELETE FROM \"practica-mvc\".estudiantes WHERE id = ?;";
+
+        try(Connection conn = ConexionPostgresDatabase.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+
+        } catch(SQLException error) {
+            error.printStackTrace();
+        }   
+    }
 }

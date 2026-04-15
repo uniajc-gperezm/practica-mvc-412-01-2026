@@ -55,4 +55,11 @@ public class ControladorEstudiante {
             vistaEstudiante.mostrarMensaje("No se encontró un estudiante con el ID proporcionado.");
         }
     }
+
+    public void eliminarEstudiante() {
+        // Lógica para eliminar un estudiante
+        int id = vistaEstudiante.solicitarIdEstudianteParaEliminar();
+        estudianteService.eliminarEstudiante(id);
+        vistaEstudiante.mostrarMensaje("Estudiante eliminado exitosamente.");
+    }
 }

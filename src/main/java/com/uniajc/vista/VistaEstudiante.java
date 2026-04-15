@@ -15,7 +15,7 @@ public class VistaEstudiante {
 
     public Estudiante solicitarDatosEstudiante() {
 
-        System.out.println("Registrando los datos del estudiante...");
+        System.out.println("\nRegistrando los datos del estudiante...");
 
         System.out.print("Ingrese el nombre del estudiante: ");
         String nombre = scanner.nextLine();
@@ -34,11 +34,10 @@ public class VistaEstudiante {
         System.out.println("Nombre: " +estudiante.getNombre());
         System.out.println("Apellido: " +estudiante.getApellido());
         System.out.println("Correo: " +estudiante.getCorreo());
-        System.out.println();
     }
 
     public void mostrarTodosLosEstudiantes(List<Estudiante> estudiantes) {
-        System.out.println("Lista de Estudiantes: ");
+        System.out.println("\nLista de Estudiantes: ");
         
         for(Estudiante estudiante : estudiantes) {
             mostrarDetallesEstudiante(estudiante);
@@ -46,7 +45,7 @@ public class VistaEstudiante {
     }
 
     public int solicitarIdEstudiante() {
-        System.out.print("Ingrese el ID del estudiante: ");
+        System.out.print("\nIngrese el ID del estudiante: ");
         return scanner.nextInt();
     }
 
@@ -65,6 +64,11 @@ public class VistaEstudiante {
         String nuevoCorreo = scanner.nextLine();
 
         return new Estudiante(estudianteExistente.getId(), nuevoNombre, nuevoApellido, nuevoCorreo);
+    }
+
+    public int solicitarIdEstudianteParaEliminar() {
+        System.out.print("\nIngrese el ID del estudiante que desea eliminar: ");
+        return scanner.nextInt();
     }
 
     public void mostrarMensaje(String mensaje) {

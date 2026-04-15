@@ -37,4 +37,8 @@ public class EstudianteService {
     public void actualizarEstudiante(Estudiante estudiante) {
         estudianteDao.actualizarEstudiante(estudiante);
     }
+
+    public void eliminarEstudiante(int id) {
+        estudianteDao.eliminarEstudiante(id);
+    }
 }
