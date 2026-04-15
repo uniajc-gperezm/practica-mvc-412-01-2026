@@ -38,7 +38,7 @@ public class EstudianteDao {
     public List<Estudiante> obtenerTodosLosEstudiantes() {
         List<Estudiante> estudiantes = new ArrayList<Estudiante>();
         
-        String sql = "SELECT id, name, lastname, email FROM \"practica-mvc\".estudiantes;";
+        String sql = "SELECT id, name, lastname, email FROM \"practica-mvc\".estudiantes ORDER BY id;";
 
         try(Connection conn = ConexionPostgresDatabase.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery()) {
