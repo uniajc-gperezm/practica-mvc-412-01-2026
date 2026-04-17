@@ -1,8 +1,9 @@
 package com.uniajc.modelo;
 
 public class Estudiante {
-    String nombre;
-    int edad;
+    private String nombre;
+    private String apellido;
+    private String correo;
 
     public Estudiante(String nombre, int edad) {
         this.nombre = nombre;
