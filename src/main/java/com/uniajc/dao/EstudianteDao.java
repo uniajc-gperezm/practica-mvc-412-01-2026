@@ -1,5 +1,8 @@
 package com.uniajc.dao;
 
+import com.uniajc.config.ConexionPostgresDatabase;
+import com.uniajc.modelo.Estudiante;
+
 // Importaciones necesarias para la conexión a la base de datos y consulta de datos a la tabla de estudiantes
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,9 +12,6 @@ import java.sql.SQLException;
 // Importaciones necesarias para manejar listas de estudiantes
 import java.util.ArrayList;
 import java.util.List;
-
-import com.uniajc.config.ConexionPostgresDatabase;
-import com.uniajc.modelo.Estudiante;
 
 public class EstudianteDao {
 
@@ -72,7 +72,7 @@ public class EstudianteDao {
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
 
-            while(rs.next()) {
+            if(rs.next()) {
                 estudiante = new Estudiante();
 
                 estudiante.setId(rs.getInt("id"));
