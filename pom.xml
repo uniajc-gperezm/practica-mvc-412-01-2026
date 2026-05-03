@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.uniajc</groupId>
@@ -13,11 +13,10 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
-    <!-- aqui instalamos las dependencias de terceros -->
+    <!-- Aquí instalamos las dependencias de terceros -->
     <dependencies>
-        
-        <!-- Libreria de MYSQL -->
 
+        <!-- Librería de MySQL Connector/J -->
         <!-- Source: https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
         <dependency>
             <groupId>com.mysql</groupId>
@@ -26,8 +25,7 @@
             <scope>compile</scope>
         </dependency>
 
-        <!-- Libreria de PostgreSQL -->
-
+        <!-- Librería de PostgreSQL JDBC Driver -->
         <!-- Source: https://mvnrepository.com/artifact/org.postgresql/postgresql -->
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -35,7 +33,6 @@
             <version>42.6.0</version>
             <scope>compile</scope>
         </dependency>
-
     </dependencies>
 
 </project>

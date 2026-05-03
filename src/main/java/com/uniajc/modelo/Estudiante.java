@@ -6,7 +6,7 @@ public class Estudiante {
     private String nombre;
     private String apellido;
     private String correo;
-
+    
     public Estudiante() {
     }
 
@@ -20,7 +20,7 @@ public class Estudiante {
     public Integer getId() {
         return id;
     }
-    
+
     public void setId(Integer id) {
         this.id = id;
     }
@@ -48,5 +48,4 @@ public class Estudiante {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-
 }
