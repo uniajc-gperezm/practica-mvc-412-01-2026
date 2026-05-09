@@ -1,30 +1,30 @@
 package com.uniajc.modelo;
 
+// POJO (Plain Old Java Object) - Clase simple que representa un estudiante con sus atributos y métodos getter/setter
 public class Estudiante {
-
-    private Integer id;
+    
+    private int id;
     private String nombre;
     private String apellido;
-    private String correo;
+    private String email;
 
-    public Estudiante() {
-    }
+    public Estudiante() { }
 
-    public Estudiante(Integer id, String nombre, String apellido, String correo) {
+    public Estudiante(int id, String nombre, String apellido, String email) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.correo = correo;
+        this.email = email;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
-    
-    public void setId(Integer id) {
+
+    public void setId(int id) {
         this.id = id;
     }
-
+  
     public String getNombre() {
         return nombre;
     }
@@ -41,12 +41,12 @@ public class Estudiante {
         this.apellido = apellido;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 }

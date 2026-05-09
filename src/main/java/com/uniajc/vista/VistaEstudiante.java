@@ -14,8 +14,8 @@ public class VistaEstudiante {
     }
 
     public Estudiante solicitarDatosEstudiante() {
-
-        System.out.println("Registrando los datos del estudiante...");
+        // Aquí se podrían implementar métodos para solicitar al usuario que ingrese los datos del estudiante
+        // Por ejemplo, utilizando Scanner para leer desde la consola o creando un formulario en una interfaz gráfica
 
         System.out.println("Ingrese el nombre del estudiante:");
         String nombre = scanner.nextLine();
@@ -23,22 +23,21 @@ public class VistaEstudiante {
         System.out.println("Ingrese el apellido del estudiante:");
         String apellido = scanner.nextLine();
 
-        System.out.println("Ingrese el correo del estudiante:");
+        System.out.println("Ingrese la correo del estudiante:");
         String correo = scanner.nextLine();
 
-        return new Estudiante(0, nombre, apellido, correo);
+        return new Estudiante(0, nombre, apellido, correo); // Retornar un objeto Estudiante con los datos ingresados por el usuario
     }
 
+    // La manera sencilla de mostrar los detalles de un estudiante es a través de un método que reciba un objeto Estudiante y acceda a sus propiedades para mostrarlas. Aquí te dejo un ejemplo de cómo podrías implementar esto:
     public void mostrarDetallesEstudiante(Estudiante estudiante) {
-        System.out.println("Id: " + estudiante.getId());
-        System.out.println("Nombre: " + estudiante.getNombre());
-        System.out.println("Apellido: " + estudiante.getApellido());
-        System.out.println("Correo: " + estudiante.getCorreo());
-        System.out.println();
+        System.out.println("ID: " + estudiante.getId() + ", Nombre: " + estudiante.getNombre() + ", Apellido: " + estudiante.getApellido() + ", Correo: " + estudiante.getEmail());
     }
 
     public void mostrarTodosLosEstudiantes(List<Estudiante> estudiantes) {
-        System.out.println("Lista de Estudiantes: ");
+        System.out.println("------");
+        System.out.println("Lista de Estudiantes:");
+        System.out.println("------");
         for (Estudiante estudiante : estudiantes) {
             mostrarDetallesEstudiante(estudiante);
         }
@@ -47,4 +46,5 @@ public class VistaEstudiante {
     public void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
     }
+
 }
