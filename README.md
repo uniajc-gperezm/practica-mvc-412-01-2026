@@ -60,3 +60,5 @@ Usa el archivo `config.properties` en la raíz para configurar tu conexión a My
 
 ---
 *Recuerda: El Modelo nunca debe hablar con el usuario (sin System.out). El Controlador orquesta y la Vista interactúa.*
+
+Creado para una prueba.
