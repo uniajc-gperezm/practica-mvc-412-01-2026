@@ -15,11 +15,11 @@ public class EstudianteService {
 
     public void registrarEstudiante(Estudiante estudiante) {
 
-        if(estudiante == null) {
+        if (estudiante == null) {
             throw new IllegalArgumentException("El estudiante no puede ser nulo.");
         }
 
-        if(estudiante.getNombre() == null || estudiante.getApellido() == null) {
+        if (estudiante.getNombre() == null || estudiante.getApellido() == null) {
             throw new IllegalArgumentException("Los campos nombre y apellido del estudiante son obligatorios.");
         }
 
@@ -30,15 +30,4 @@ public class EstudianteService {
         return estudianteDao.obtenerTodosLosEstudiantes();
     }
 
-    public Estudiante obtenerEstudiantePorId(int id) {
-        return estudianteDao.obtenerEstudiantePorId(id);
-    }
-
-    public void actualizarEstudiante(Estudiante estudiante) {
-        estudianteDao.actualizarEstudiante(estudiante);
-    }
-
-    public void eliminarEstudiante(int id) {
-        estudianteDao.eliminarEstudiante(id);
-    }
 }
